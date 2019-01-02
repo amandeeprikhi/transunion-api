@@ -63,16 +63,18 @@ var write = function () {
                     worksheet.getCell(index, 2).value = worksheet2.getCell(index, 3).value;
                     worksheet.getCell(index, 3).value = worksheet2.getCell(index, 11).value;
                     worksheet.getCell(index, 7).value = worksheet2.getCell(index, 5).value.toString() + worksheet2.getCell(index, 6).value.toString();
-                    worksheet.getCell(index, 10).value = worksheet2.getCell(index, 7).value;
-                    worksheet.getCell(index, 11).value = worksheet2.getCell(index, 8).value;
-                    worksheet.getCell(index, 12).value = worksheet2.getCell(index, 9).value;
+                    worksheet.getCell(index, 10).value = worksheet2.getCell(index, 8).value;
+                    worksheet.getCell(index, 11).value = worksheet2.getCell(index, 9).value;
+                    worksheet.getCell(index, 12).value = worksheet2.getCell(index, 10).value;
                     worksheet.addRow(worksheet.getRow(index).values).commit();
                     console.log("FILE WRITTEN!!!")
                 }
             })
-            workbook.csv.writeFile('TU Template Sheet2.csv').then(function () {
-                console.log("THE FILE IS CREATED")
-            })
+            .then(function(){
+                workbook.csv.writeFile('TU Template Sheet2.csv').then(function () {
+                    console.log("THE FILE IS CREATED")
+                })
+            });
         })
     })
 }
